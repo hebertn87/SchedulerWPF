@@ -15,23 +15,39 @@
     <Window.Resources>
         <vm:DateToStringConverter x:Key="DateToStringConverter"/>
     </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Command="New"/>
+                <MenuItem Command="Save"/>
+                <Separator/>
+                <MenuItem Header="Exit"/>
+            </MenuItem>
 
-    <DataGrid ItemsSource="{Binding Source={StaticResource Locator}}">
-        <DataGrid.Columns>
-            <DataGridTextColumn x:Name="Name" Header="Name" Binding="{Binding Path=ToDo.Name, ValidatesOnDataErrors=True}"/>
-            <DataGridTextColumn x:Name="Desc" Header="Description" Binding="{Binding Path=Desc, ValidatesOnDataErrors=True}"/>
-            <DataGridTextColumn x:Name="DoneBy" Header="Done By Date" Binding="{Binding DoneBy, ValidatesOnDataErrors=True, Converter={StaticResource DateToStringConverter}, StringFormat={}{0:t}}"/>
-            <DataGridTextColumn x:Name="IsDone" Header="Done?" Binding="{Binding Path=isDone, ValidatesOnDataErrors=True}"/>
-        </DataGrid.Columns>
-        <DataGrid.ItemTemplate>
-            <DataTemplate>
-                <StackPanel>
-                    <TextBox Text="{Binding Path=Name}"/>
-                    <TextBox Text="{Binding Path=Desc}"/>
-                    <TextBox Text="{Binding Path=DoneBy}"/>
-                    <TextBox Text="{Binding Path=IsDone}"/>
-                </StackPanel>
-            </DataTemplate>
-        </DataGrid.ItemTemplate>
-    </DataGrid>
+            <MenuItem Header="Edit">
+                <MenuItem Command="Cut"/>
+                <MenuItem Command="Copy"/>
+                <MenuItem Command="Paste"/>
+            </MenuItem>
+        </Menu>
+        
+        <DataGrid ItemsSource="{Binding Source={StaticResource Locator}}">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="Name" Header="Name" Binding="{Binding Path=ToDo.Name, ValidatesOnDataErrors=True}"/>
+                <DataGridTextColumn x:Name="Desc" Header="Description" Binding="{Binding Path=Desc, ValidatesOnDataErrors=True}"/>
+                <DataGridTextColumn x:Name="DoneBy" Header="Done By Date" Binding="{Binding DoneBy, ValidatesOnDataErrors=True, Converter={StaticResource DateToStringConverter}, StringFormat={}{0:t}}"/>
+                <DataGridTextColumn x:Name="IsDone" Header="Done?" Binding="{Binding Path=isDone, ValidatesOnDataErrors=True}"/>
+            </DataGrid.Columns>
+            <DataGrid.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBox Text="{Binding Path=Name}"/>
+                        <TextBox Text="{Binding Path=Desc}"/>
+                        <TextBox Text="{Binding Path=DoneBy}"/>
+                        <TextBox Text="{Binding Path=IsDone}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </DataGrid.ItemTemplate>
+        </DataGrid>
+    </DockPanel>
 </Window>
