@@ -1,0 +1,6 @@
+c:\users\heber\source\repos\Scheduler\SchedulerTests\bin\Debug\netcoreapp2.0\SchedulerTests.deps.json
+c:\users\heber\source\repos\Scheduler\SchedulerTests\bin\Debug\netcoreapp2.0\SchedulerTests.dll
+c:\users\heber\source\repos\Scheduler\SchedulerTests\obj\Debug\netcoreapp2.0\SchedulerTests.csprojResolveAssemblyReference.cache
+c:\users\heber\source\repos\Scheduler\SchedulerTests\obj\Debug\netcoreapp2.0\SchedulerTests.csproj.CoreCompileInputs.cache
+c:\users\heber\source\repos\Scheduler\SchedulerTests\obj\Debug\netcoreapp2.0\SchedulerTests.AssemblyInfoInputs.cache
+c:\users\heber\source\repos\Scheduler\SchedulerTests\obj\Debug\netcoreapp2.0\SchedulerTests.AssemblyInfo.cs

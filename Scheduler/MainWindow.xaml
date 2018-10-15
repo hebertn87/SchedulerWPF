@@ -4,29 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.galasoft.ch/ignore"
+        xmlns:vm="clr-namespace:Scheduler.ViewModel"
+        xmlns:c="clr-namespace:Scheduler"
         mc:Ignorable="d ignore"
-        Height="300"
-        Width="300"
+        Height="600"
+        Width="600"
         Title="MVVM Light Application"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
-    
+
     <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Skins/MainSkin.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <vm:DateToStringConverter x:Key="DateToStringConverter"/>
     </Window.Resources>
 
-    <Grid x:Name="LayoutRoot">
-
-        <TextBlock FontSize="36"
-                   FontWeight="Bold"
-                   Foreground="Purple"
-                   Text="{Binding WelcomeTitle}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   TextWrapping="Wrap" />
-
-    </Grid>
+    <DataGrid ItemsSource="{Binding Source={StaticResource Locator}}">
+        <DataGrid.Columns>
+            <DataGridTextColumn x:Name="Name" Header="Name" Binding="{Binding Path=ToDo.Name, ValidatesOnDataErrors=True}"/>
+            <DataGridTextColumn x:Name="Desc" Header="Description" Binding="{Binding Path=Desc, ValidatesOnDataErrors=True}"/>
+            <DataGridTextColumn x:Name="DoneBy" Header="Done By Date" Binding="{Binding DoneBy, ValidatesOnDataErrors=True, Converter={StaticResource DateToStringConverter}, StringFormat={}{0:t}}"/>
+            <DataGridTextColumn x:Name="IsDone" Header="Done?" Binding="{Binding Path=isDone, ValidatesOnDataErrors=True}"/>
+        </DataGrid.Columns>
+        <DataGrid.ItemTemplate>
+            <DataTemplate>
+                <StackPanel>
+                    <TextBlock Text="{Binding Path=Name}"/>
+                    <TextBlock Text="{Binding Path=Desc}"/>
+                    <TextBlock Text="{Binding Path=DoneBy}"/>
+                    <TextBlock Text="{Binding Path=IsDone}"/>
+                </StackPanel>
+            </DataTemplate>
+        </DataGrid.ItemTemplate>
+    </DataGrid>
 </Window>
