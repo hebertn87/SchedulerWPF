@@ -26,10 +26,10 @@
         <DataGrid.ItemTemplate>
             <DataTemplate>
                 <StackPanel>
-                    <TextBlock Text="{Binding Path=Name}"/>
-                    <TextBlock Text="{Binding Path=Desc}"/>
-                    <TextBlock Text="{Binding Path=DoneBy}"/>
-                    <TextBlock Text="{Binding Path=IsDone}"/>
+                    <TextBox Text="{Binding Path=Name}"/>
+                    <TextBox Text="{Binding Path=Desc}"/>
+                    <TextBox Text="{Binding Path=DoneBy}"/>
+                    <TextBox Text="{Binding Path=IsDone}"/>
                 </StackPanel>
             </DataTemplate>
         </DataGrid.ItemTemplate>

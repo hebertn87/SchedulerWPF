@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Scheduler.Model
 {
-    public class ToDo : IDataErrorInfo
+    public class ToDo : ValidationRule
     {
         public String Name { get; set; }
         public String Desc { get; set; }
@@ -23,25 +25,10 @@ namespace Scheduler.Model
             this.IsDone = IsDone;
         }
 
-        string IDataErrorInfo.Error
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            get
-            {
-                return null;
-            }
-        }
 
-        string IDataErrorInfo.this[string columnName]
-        {
-            get
-            {
-                if(columnName == Name)
-                {
-                    if (string.IsNullOrEmpty(Name))
-                        return "Must input the Name of Task";
-                }
-                return null;
-            }
+            throw new NotImplementedException();
         }
     }
 
