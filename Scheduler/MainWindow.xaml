@@ -9,7 +9,7 @@
         mc:Ignorable="d ignore"
         Height="600"
         Width="600"
-        Title="MVVM Light Application"
+        Title="Task List"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
 
     <Window.Resources>
@@ -30,24 +30,56 @@
                 <MenuItem Command="Paste"/>
             </MenuItem>
         </Menu>
-        
-        <DataGrid ItemsSource="{Binding Source={StaticResource Locator}}">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="Name" Header="Name" Binding="{Binding Path=ToDo.Name, ValidatesOnDataErrors=True}"/>
-                <DataGridTextColumn x:Name="Desc" Header="Description" Binding="{Binding Path=Desc, ValidatesOnDataErrors=True}"/>
-                <DataGridTextColumn x:Name="DoneBy" Header="Done By Date" Binding="{Binding DoneBy, ValidatesOnDataErrors=True, Converter={StaticResource DateToStringConverter}, StringFormat={}{0:t}}"/>
-                <DataGridTextColumn x:Name="IsDone" Header="Done?" Binding="{Binding Path=isDone, ValidatesOnDataErrors=True}"/>
-            </DataGrid.Columns>
-            <DataGrid.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBox Text="{Binding Path=Name}"/>
-                        <TextBox Text="{Binding Path=Desc}"/>
-                        <TextBox Text="{Binding Path=DoneBy}"/>
-                        <TextBox Text="{Binding Path=IsDone}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </DataGrid.ItemTemplate>
-        </DataGrid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="Task Name"/>
+                <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="Description"/>
+                <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="Date and Time"/>
+                <TextBlock HorizontalAlignment="Center" Grid.Column="3" Text="Done"/>
+            </Grid>
+
+            <ItemsControl Grid.Row="2" ItemsSource="{Binding Source={StaticResource Locator}}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBox x:Name="Name" Text="{Binding Path=ToDo.Name, ValidatesOnDataErrors=True}"/>
+                            <TextBox x:Name="Desc" Text="{Binding Path=Desc, ValidatesOnDataErrors=True}"/>
+                            <TextBox x:Name="DoneBy" Text="{Binding Path=DoneBy, ValidatesOnDataErrors=True, Converter={StaticResource DateToStringConverter}, StringFormat={}{0:t}}"/>
+                            <TextBox x:Name="IsDone" Text="{Binding Path=isDone, ValidatesOnDataErrors=True}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*" MinWidth="100"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox/>
+                <Button Grid.Column="1" Content="Add To Do"/>
+            </Grid>
+        </Grid>
     </DockPanel>
 </Window>
