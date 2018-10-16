@@ -10,26 +10,11 @@
         Height="600"
         Width="600"
         Title="Task List"
-        DataContext="{Binding Main, Source={StaticResource Locator}}">
+        DataContext="{Binding Main, Source={StaticResource ToDoListVM}}">
 
     <Window.Resources>
         <vm:DateToStringConverter x:Key="DateToStringConverter"/>
     </Window.Resources>
-    <DockPanel>
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="File">
-                <MenuItem Command="New"/>
-                <MenuItem Command="Save"/>
-                <Separator/>
-                <MenuItem Header="Exit"/>
-            </MenuItem>
-
-            <MenuItem Header="Edit">
-                <MenuItem Command="Cut"/>
-                <MenuItem Command="Copy"/>
-                <MenuItem Command="Paste"/>
-            </MenuItem>
-        </Menu>
 
         <Grid>
             <Grid.RowDefinitions>
@@ -52,7 +37,7 @@
                 <TextBlock HorizontalAlignment="Center" Grid.Column="3" Text="Done"/>
             </Grid>
 
-            <ItemsControl Grid.Row="2" ItemsSource="{Binding Source={StaticResource Locator}}">
+            <ItemsControl Grid.Row="2" ItemsSource="{Binding ToDoItem}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <VirtualizingStackPanel Orientation="Vertical"/>
@@ -62,7 +47,7 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <TextBox x:Name="Name" Text="{Binding Path=ToDo.Name, ValidatesOnDataErrors=True}"/>
+                            <TextBox x:Name="Name" Text="{Binding Path=ToDoListVM.Name, ValidatesOnDataErrors=True}"/>
                             <TextBox x:Name="Desc" Text="{Binding Path=Desc, ValidatesOnDataErrors=True}"/>
                             <TextBox x:Name="DoneBy" Text="{Binding Path=DoneBy, ValidatesOnDataErrors=True, Converter={StaticResource DateToStringConverter}, StringFormat={}{0:t}}"/>
                             <TextBox x:Name="IsDone" Text="{Binding Path=isDone, ValidatesOnDataErrors=True}"/>
@@ -78,8 +63,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBox/>
-                <Button Grid.Column="1" Content="Add To Do"/>
+                <Button Grid.Column="1" Content="Add To Do" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}"/>
             </Grid>
         </Grid>
-    </DockPanel>
 </Window>

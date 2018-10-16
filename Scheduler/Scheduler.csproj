@@ -70,8 +70,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModel\MainVM.cs" />
-    <Compile Include="ViewModel\VMLocator.cs" />
+    <Compile Include="Command\CreateToDoCommand.cs" />
+    <Compile Include="ViewModel\ToDoListVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

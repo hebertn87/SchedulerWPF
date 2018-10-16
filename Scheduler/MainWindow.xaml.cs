@@ -14,6 +14,7 @@ namespace Scheduler
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new ToDoListVM();
         }
     }
 }

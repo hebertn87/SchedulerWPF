@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheduler", "Scheduler\Scheduler.csproj", "{F4F7D67D-717A-431F-8464-75CFCE2F043C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulerTests", "SchedulerTests\SchedulerTests.csproj", "{D88A94BA-4098-4AF3-AC0B-170234E54ABC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchedulerTests", "SchedulerTests\SchedulerTests.csproj", "{D88A94BA-4098-4AF3-AC0B-170234E54ABC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
