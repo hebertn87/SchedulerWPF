@@ -18,3 +18,4 @@ C:\Users\heber\source\repos\Scheduler\SchedulerTests\bin\Debug\netcoreapp2.0\Gal
 C:\Users\heber\source\repos\Scheduler\SchedulerTests\obj\Debug\netcoreapp2.0\SchedulerTests.csproj.CopyComplete
 C:\Users\heber\source\repos\Scheduler\SchedulerTests\obj\Debug\netcoreapp2.0\SchedulerTests.dll
 C:\Users\heber\source\repos\Scheduler\SchedulerTests\obj\Debug\netcoreapp2.0\SchedulerTests.pdb
+C:\Users\heber\source\repos\Scheduler\SchedulerTests\bin\Debug\netcoreapp2.0\Xceed.Wpf.Toolkit.dll

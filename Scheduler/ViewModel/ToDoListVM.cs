@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
+using Xceed.Wpf.Toolkit;
 
 namespace Scheduler.ViewModel
 {
@@ -32,7 +33,7 @@ namespace Scheduler.ViewModel
 
         public ICommand CreateToDoCommand { get { return new CreateToDoCommand(); } }
 
-        public DateTime DoneBy { get; set; }
+        public DateTimePicker DoneBy { get; set; }
         public string Desc { get; set; }
         public string Name { get; set; }
         public bool IsDone { get; set; }
@@ -50,9 +51,9 @@ namespace Scheduler.ViewModel
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            String dateTime = (String)value.ToString();
+            //String dateTime = (String)value.ToString();
 
-            return dateTime;
+            return value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

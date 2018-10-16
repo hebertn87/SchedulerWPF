@@ -3,6 +3,7 @@ using Scheduler.ViewModel;
 using NUnit;
 using NUnit.Framework;
 using Scheduler.Model;
+using Xceed.Wpf.Toolkit;
 
 namespace SchedulerTests
 {
@@ -11,7 +12,7 @@ namespace SchedulerTests
         [Test]
         public void Test1()
         {
-            DateTime date = new DateTime();
+            DateTimePicker date = new DateTimePicker();
             
             ToDo todo = new ToDo("Do Work", "Get all my work done", date , false );
 
