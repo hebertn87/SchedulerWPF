@@ -9,14 +9,21 @@ namespace SchedulerTests
 {
     public class ScheduleTest
     {
+        DateTimePicker date = new DateTimePicker();
+        ToDoListVM name = new Scheduler.ViewModel.ToDoListVM();
+        //ToDo todo = new ToDo("Do Work", "Get all my work done", date.ToString, false);
+
         [Test]
         public void Test1()
         {
-            DateTimePicker date = new DateTimePicker();
-            
-            ToDo todo = new ToDo("Do Work", "Get all my work done", date , false );
+           
+            //Assert.AreEqual(todo.Name, name);
+        }
 
-            Assert.AreEqual(todo.Name, todo.Desc, todo.IsDone.ToString());
+        [Test]
+        public void boolFalse()
+        {
+            Assert.AreEqual(false, false);
         }
     }
 }

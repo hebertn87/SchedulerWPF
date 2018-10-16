@@ -15,7 +15,7 @@ using Xceed.Wpf.Toolkit;
 
 namespace Scheduler.ViewModel
 {
-    class ToDoListVM : INotifyPropertyChanged
+    public class ToDoListVM : INotifyPropertyChanged
     {
         private ObservableCollection<ToDoListVM> todo = new ObservableCollection<ToDoListVM>();
 

@@ -11,12 +11,14 @@
         Width="600"
         Title="Task List"
         DataContext="{Binding Main, Source={StaticResource ToDoListVM}}">
-
+    
+    
     <Window.Resources>
         <vm:DateToStringConverter x:Key="DateToStringConverter"/>
     </Window.Resources>
 
-        <Grid>
+    
+    <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -37,7 +39,7 @@
             <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="Date and Time"/>
             <TextBlock HorizontalAlignment="Center" Grid.Column="3" Text="Done"/>
 
-            <ItemsControl Grid.Row="1" ItemsSource="{Binding ToDoItem}">
+            <ItemsControl ItemsSource="{Binding ToDoItem}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <VirtualizingStackPanel Orientation="Horizontal"/>
@@ -93,4 +95,5 @@
             <Button Grid.Column="4" Content="Add To Do" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}"/>
             </Grid>
         </Grid>
+    
 </Window>

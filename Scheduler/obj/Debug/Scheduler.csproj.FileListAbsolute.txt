@@ -80,3 +80,6 @@ C:\Users\heber\source\repos\Scheduler\Scheduler\bin\Debug\ro\Xceed.Wpf.AvalonDoc
 C:\Users\heber\source\repos\Scheduler\Scheduler\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\heber\source\repos\Scheduler\Scheduler\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\heber\source\repos\Scheduler\Scheduler\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\heber\source\repos\Scheduler\Scheduler\bin\Debug\nunit.framework.dll
+C:\Users\heber\source\repos\Scheduler\Scheduler\bin\Debug\nunit.framework.pdb
+C:\Users\heber\source\repos\Scheduler\Scheduler\bin\Debug\nunit.framework.xml
