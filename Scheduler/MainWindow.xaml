@@ -21,14 +21,15 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition x:Name="col1" Width="*"/>
+                <ColumnDefinition x:Name="col2" Width="5*"/>
+                <ColumnDefinition x:Name="col3" Width="2*"/>
+                <ColumnDefinition x:Name="col4" Width="*"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="Task Name"/>
@@ -36,37 +37,51 @@
             <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="Date and Time"/>
             <TextBlock HorizontalAlignment="Center" Grid.Column="3" Text="Done"/>
 
-            <ItemsControl ItemsSource="{Binding ToDoItem}">
+            <ItemsControl Grid.Row="1" ItemsSource="{Binding ToDoItem}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <VirtualizingStackPanel Orientation="Vertical"/>
+                        <VirtualizingStackPanel Orientation="Horizontal"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <TextBlock Grid.Column="0" Text="{Binding Path=Name, ValidatesOnDataErrors=True}"/>
-                            <TextBlock Grid.Column="1" Text="{Binding Path=Desc, ValidatesOnDataErrors=True}"/>
-                            <TextBlock Grid.Column="2" Text="{Binding Path=DoneBy, ValidatesOnDataErrors=True, Converter={StaticResource DateToStringConverter}, StringFormat={}{dd:t}}"/>
-                            <CheckBox Grid.Column="3" IsChecked="{Binding Path=IsDone, ValidatesOnDataErrors=True}"/>
+                            <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="{Binding Path=Name, ValidatesOnDataErrors=True}"/>
+                            <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="{Binding Path=Desc, ValidatesOnDataErrors=True}"/>
+                            <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="{Binding Path=DoneBy, ValidatesOnDataErrors=True, Converter={StaticResource DateToStringConverter}, StringFormat={}{dd:t}}"/>
+                            <CheckBox HorizontalAlignment="Center" Grid.Column="3" IsChecked="{Binding Path=IsDone, ValidatesOnDataErrors=True}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
 
             </ItemsControl>
         </Grid>
-            
         <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*" MinWidth="100"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock HorizontalAlignment="Center" Text="Name" Grid.Column="0"/>
+            <TextBlock HorizontalAlignment="Center" Text="Description" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Center" Text="Date and Time" Grid.Column="2"/>
+
+        </Grid>
+            
+        <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="*" MinWidth="100"/>
                 </Grid.ColumnDefinitions>
-                
+
+            
             <Grid Grid.Column="0" x:Name="Name">
+                
                 <TextBox Text="{Binding Path=Name}"/>
             </Grid>
             <Grid Grid.Column="1" x:Name="Desc">
@@ -75,11 +90,6 @@
             <Grid Grid.Column="2" x:Name="DoneBy">
                 <TextBox Text="{Binding Path=DoneBy}"/>
             </Grid>
-                
-            <Grid Grid.Column="3" x:Name="IsDone">
-                <CheckBox HorizontalAlignment="Center" IsChecked="{Binding Path=IsDone}"/>
-            </Grid>
-
             <Button Grid.Column="4" Content="Add To Do" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}"/>
             </Grid>
         </Grid>
