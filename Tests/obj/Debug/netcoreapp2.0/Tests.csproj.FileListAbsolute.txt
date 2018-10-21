@@ -5,7 +5,6 @@ C:\Users\heber\source\repos\Scheduler\Tests\bin\Debug\netcoreapp2.0\Tests.deps.j
 C:\Users\heber\source\repos\Scheduler\Tests\bin\Debug\netcoreapp2.0\Tests.runtimeconfig.json
 C:\Users\heber\source\repos\Scheduler\Tests\bin\Debug\netcoreapp2.0\Tests.runtimeconfig.dev.json
 C:\Users\heber\source\repos\Scheduler\Tests\bin\Debug\netcoreapp2.0\Tests.dll
-C:\Users\heber\source\repos\Scheduler\Tests\obj\Debug\netcoreapp2.0\Tests.csprojResolveAssemblyReference.cache
 C:\Users\heber\source\repos\Scheduler\Tests\obj\Debug\netcoreapp2.0\Tests.csproj.CoreCompileInputs.cache
 C:\Users\heber\source\repos\Scheduler\Tests\obj\Debug\netcoreapp2.0\Tests.AssemblyInfoInputs.cache
 C:\Users\heber\source\repos\Scheduler\Tests\obj\Debug\netcoreapp2.0\Tests.AssemblyInfo.cs
@@ -24,3 +23,4 @@ C:\Users\heber\source\repos\Scheduler\Tests\bin\Debug\netcoreapp2.0\Tests.pdb
 C:\Users\heber\source\repos\Scheduler\Tests\obj\Debug\netcoreapp2.0\Tests.dll
 C:\Users\heber\source\repos\Scheduler\Tests\obj\Debug\netcoreapp2.0\Tests.pdb
 C:\Users\heber\source\repos\Scheduler\Tests\bin\Debug\netcoreapp2.0\Xceed.Wpf.Toolkit.dll
+C:\Users\heber\source\repos\Scheduler\Tests\obj\Debug\netcoreapp2.0\Tests.csprojAssemblyReference.cache

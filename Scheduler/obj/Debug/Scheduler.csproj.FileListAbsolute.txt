@@ -1,4 +1,3 @@
-C:\Users\heber\source\repos\Scheduler\Scheduler\obj\Debug\Scheduler.csprojResolveAssemblyReference.cache
 C:\Users\heber\source\repos\Scheduler\Scheduler\obj\Debug\MainWindow.baml
 C:\Users\heber\source\repos\Scheduler\Scheduler\obj\Debug\MainWindow.g.cs
 C:\Users\heber\source\repos\Scheduler\Scheduler\obj\Debug\App.g.cs
@@ -83,3 +82,4 @@ C:\Users\heber\source\repos\Scheduler\Scheduler\bin\Debug\zh-Hans\Xceed.Wpf.Aval
 C:\Users\heber\source\repos\Scheduler\Scheduler\bin\Debug\nunit.framework.dll
 C:\Users\heber\source\repos\Scheduler\Scheduler\bin\Debug\nunit.framework.pdb
 C:\Users\heber\source\repos\Scheduler\Scheduler\bin\Debug\nunit.framework.xml
+C:\Users\heber\source\repos\Scheduler\Scheduler\obj\Debug\Scheduler.csprojAssemblyReference.cache
