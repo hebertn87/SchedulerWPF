@@ -33,7 +33,7 @@ namespace Scheduler.ViewModel
 
         public ICommand CreateToDoCommand { get { return new CreateToDoCommand(); } }
 
-        public DateTimePicker DoneBy { get; set; }
+        public DateTime DoneBy { get; set; }
         public string Desc { get; set; }
         public string Name { get; set; }
         public bool IsDone { get; set; }
@@ -43,22 +43,6 @@ namespace Scheduler.ViewModel
         private void NotifyPropertyChanged(String name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-    }
-
-    //Custom class that implements the Ivalue Converter
-    public class DateToStringConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            //String dateTime = (String)value.ToString();
-
-            return value;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
         }
     }
 }

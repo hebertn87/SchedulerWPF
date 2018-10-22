@@ -10,17 +10,17 @@ namespace Scheduler.Model
     {
         public String Name { get; set; }
         public String Desc { get; set; }
-        public DateTimePicker DoneBy { get; set; }
+        public DateTime DoneBy { get; set; }
         public Boolean IsDone { get; set; }
 
         public ToDo()
         {
             Name = "";
             Desc = "";
-            DoneBy = new DateTimePicker();
+            DoneBy = new DateTime();
             IsDone = false;        }
 
-        public ToDo(String Name, String Desc, DateTimePicker DoneBy, Boolean IsDone)
+        public ToDo(String Name, String Desc, DateTime DoneBy, Boolean IsDone)
         {
             this.Name = Name;
             this.Desc = Desc;

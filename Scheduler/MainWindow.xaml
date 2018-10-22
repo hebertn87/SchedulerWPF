@@ -11,12 +11,7 @@
         Width="600"
         Title="Task List"
         DataContext="{Binding Main, Source={StaticResource ToDoListVM}}">
-    
-    
-    <Window.Resources>
-        <vm:DateToStringConverter x:Key="DateToStringConverter"/>
-    </Window.Resources>
-    
+
     <DockPanel>
         <Ribbon DockPanel.Dock="Top" Margin="0,-22,0,0">
             <Ribbon.ApplicationMenu>
@@ -75,56 +70,30 @@
                 <TreeViewItem Header="Item 5"/>
             </TreeViewItem>
         </TreeView>
-        <Grid>
 
+        <Grid DockPanel.Dock="Top">
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="4*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition x:Name="col1" Width="*"/>
-                    <ColumnDefinition x:Name="col2" Width="5*"/>
-                    <ColumnDefinition x:Name="col3" Width="2*"/>
-                    <ColumnDefinition x:Name="col4" Width="*"/>
-                </Grid.ColumnDefinitions>
+            <DataGrid ItemsSource="{Binding ToDoItem}" HorizontalAlignment="Center" VerticalAlignment="Center" Name="taskListDataGrid">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Task Name" Binding="{Binding Name, ValidatesOnDataErrors=True}" />
+                    <DataGridTextColumn Header="Description" Binding ="{Binding Desc, ValidatesOnDataErrors=True}" />
+                    <DataGridTextColumn Header="Time done by" Binding="{Binding DoneBy, ValidatesOnDataErrors=True}"/>
+                    <DataGridTextColumn Header="Check Done"/>
+                </DataGrid.Columns>
 
-                <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="Task Name"/>
-                <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="Description"/>
-                <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="Date and Time"/>
-                <TextBlock HorizontalAlignment="Center" Grid.Column="3" Text="Done"/>
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ToDoItem}"/>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
+            </DataGrid>
 
-                <ItemsControl ItemsSource="{Binding ToDoItem}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
 
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="{Binding Path=Name, ValidatesOnDataErrors=True}"/>
-                                <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="{Binding Path=Desc, ValidatesOnDataErrors=True}"/>
-                                <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="{Binding Path=DoneBy, ValidatesOnDataErrors=True, Converter={StaticResource DateToStringConverter}, StringFormat={}{dd:t}}"/>
-                                <CheckBox HorizontalAlignment="Center" Grid.Column="3" IsChecked="{Binding Path=IsDone, ValidatesOnDataErrors=True}">
-                                    <CheckBox.ToolTip>
-                                        <StackPanel>
-                                            <TextBlock FontWeight="Bold">Box checker</TextBlock>
-                                            <TextBlock>Check this box to signify that a task has been done.</TextBlock>
-                                        </StackPanel>
-                                    </CheckBox.ToolTip>
-                                </CheckBox>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-
-                </ItemsControl>
-            </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*"/>
@@ -138,8 +107,10 @@
                 <TextBlock HorizontalAlignment="Center" Text="Date and Time" Grid.Column="2"/>
 
             </Grid>
-
-            <Grid Grid.Row="3">
+        </Grid>
+        
+        <Expander MaxHeight="100" Header="Expand Add Task text boxes" DockPanel.Dock="Bottom">
+            <Grid MaxHeight="100">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="4*"/>
@@ -156,7 +127,7 @@
                     <TextBox Text="{Binding Path=Desc}"/>
                 </Grid>
                 <Grid Grid.Column="2" x:Name="DoneBy">
-                    <TextBox Text="{Binding Path=DoneBy}"/>
+                    <DatePicker Text="{Binding Path=DoneBy}"/>
                 </Grid>
                 <Button Grid.Column="4" Content="Add To Do" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}">
                     <Button.ToolTip>
@@ -169,6 +140,6 @@
                     </Button.ToolTip>
                 </Button>
             </Grid>
-        </Grid>
+        </Expander>
     </DockPanel>
 </Window>

@@ -23,7 +23,7 @@ namespace Scheduler.Command
         {
             if (parameter is ToDoListVM toDoList)
             {
-                toDoList.ToDoItem.Add(new ToDoListVM() {Name = toDoList.Name, Desc = toDoList.Desc, DoneBy = toDoList.DoneBy, IsDone = false });
+                toDoList.ToDoItem.Add(new ToDoListVM() {Name = toDoList.Name, Desc = toDoList.Desc, DoneBy = toDoList.DoneBy });
             }
         }
     }
