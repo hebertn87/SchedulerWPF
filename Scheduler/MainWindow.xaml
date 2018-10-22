@@ -16,11 +16,11 @@
     <Window.Resources>
         <vm:DateToStringConverter x:Key="DateToStringConverter"/>
     </Window.Resources>
+    
     <DockPanel>
         <Ribbon DockPanel.Dock="Top" Margin="0,-22,0,0">
             <Ribbon.ApplicationMenu>
                 <RibbonApplicationMenu>
-
                     <RibbonApplicationMenu.AuxiliaryPaneContent>
                         <RibbonGallery ScrollViewer.VerticalScrollBarVisibility="Auto">
                             <RibbonGalleryCategory MaxColumnCount="1">
@@ -65,6 +65,16 @@
                 </RibbonGroup>
             </RibbonTab>
         </Ribbon>
+
+        <TreeView DockPanel.Dock="Left">
+            <TreeViewItem Header="Group 1">
+                <TreeViewItem Header="Item 1"/>
+                <TreeViewItem Header="Item 2"/>
+                <TreeViewItem Header="Item 3"/>
+                <TreeViewItem Header="Item 4"/>
+                <TreeViewItem Header="Item 5"/>
+            </TreeViewItem>
+        </TreeView>
         <Grid>
 
 
@@ -101,7 +111,14 @@
                                 <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="{Binding Path=Name, ValidatesOnDataErrors=True}"/>
                                 <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="{Binding Path=Desc, ValidatesOnDataErrors=True}"/>
                                 <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="{Binding Path=DoneBy, ValidatesOnDataErrors=True, Converter={StaticResource DateToStringConverter}, StringFormat={}{dd:t}}"/>
-                                <CheckBox HorizontalAlignment="Center" Grid.Column="3" IsChecked="{Binding Path=IsDone, ValidatesOnDataErrors=True}"/>
+                                <CheckBox HorizontalAlignment="Center" Grid.Column="3" IsChecked="{Binding Path=IsDone, ValidatesOnDataErrors=True}">
+                                    <CheckBox.ToolTip>
+                                        <StackPanel>
+                                            <TextBlock FontWeight="Bold">Box checker</TextBlock>
+                                            <TextBlock>Check this box to signify that a task has been done.</TextBlock>
+                                        </StackPanel>
+                                    </CheckBox.ToolTip>
+                                </CheckBox>
                             </StackPanel>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
@@ -141,7 +158,16 @@
                 <Grid Grid.Column="2" x:Name="DoneBy">
                     <TextBox Text="{Binding Path=DoneBy}"/>
                 </Grid>
-                <Button Grid.Column="4" Content="Add To Do" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}"/>
+                <Button Grid.Column="4" Content="Add To Do" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Add a To-Do To the list</TextBlock>
+                                <TextBlock>Submits a to-do list to the grid.</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
             </Grid>
         </Grid>
     </DockPanel>
