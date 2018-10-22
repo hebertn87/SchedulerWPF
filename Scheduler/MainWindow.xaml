@@ -72,74 +72,57 @@
         </TreeView>
 
         <Grid DockPanel.Dock="Top">
-
             <Grid.RowDefinitions>
-                <RowDefinition Height="4*"/>
+                <RowDefinition Height="8*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            
+            <Grid Grid.Row="0">
+                <DataGrid ItemsSource="{Binding ToDoItem}" HorizontalAlignment="Center" VerticalAlignment="Top" Name="taskListDataGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="*" Header="Task Name" Binding="{Binding Name, ValidatesOnDataErrors=True}" />
+                        <DataGridTextColumn Width="*" Header="Description" Binding ="{Binding Desc, ValidatesOnDataErrors=True}" />
+                        <DataGridTextColumn Width="*" Header="Time done by" Binding="{Binding DoneBy, ValidatesOnDataErrors=True}"/>
+                        <DataGridTextColumn Width="*" Header="Check Done" Binding="{Binding IsDone, ValidatesOnDataErrors=True}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
 
-            <DataGrid ItemsSource="{Binding ToDoItem}" HorizontalAlignment="Center" VerticalAlignment="Center" Name="taskListDataGrid">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Task Name" Binding="{Binding Name, ValidatesOnDataErrors=True}" />
-                    <DataGridTextColumn Header="Description" Binding ="{Binding Desc, ValidatesOnDataErrors=True}" />
-                    <DataGridTextColumn Header="Time done by" Binding="{Binding DoneBy, ValidatesOnDataErrors=True}"/>
-                    <DataGridTextColumn Header="Check Done"/>
-                </DataGrid.Columns>
+            <Grid Grid.Row="1">
+                <Expander DockPanel.Dock="Bottom" ExpandDirection="Up" MaxHeight="100" Header="Expand Add Task text boxes" >
+                    <Grid MaxHeight="100">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*" MinWidth="100"/>
+                        </Grid.ColumnDefinitions>
 
-                <DataGrid.RowDetailsTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding ToDoItem}"/>
-                    </DataTemplate>
-                </DataGrid.RowDetailsTemplate>
-            </DataGrid>
-
-
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="*" MinWidth="100"/>
-                </Grid.ColumnDefinitions>
-
-                <TextBlock HorizontalAlignment="Center" Text="Name" Grid.Column="0"/>
-                <TextBlock HorizontalAlignment="Center" Text="Description" Grid.Column="1"/>
-                <TextBlock HorizontalAlignment="Center" Text="Date and Time" Grid.Column="2"/>
-
+                        <Grid Grid.Column="0" x:Name="Name">
+                            <TextBlock HorizontalAlignment="Center" Text="Name" Grid.Column="0"/>
+                            <TextBox Text="{Binding Path=Name}"/>
+                        </Grid>
+                        <Grid Grid.Column="1" x:Name="Desc">
+                            <TextBlock HorizontalAlignment="Center" Text="Description" Grid.Column="1"/>
+                            <TextBox Text="{Binding Path=Desc}"/>
+                        </Grid>
+                        <Grid Grid.Column="2" x:Name="DoneBy">
+                            <TextBlock HorizontalAlignment="Center" Text="Date and Time" Grid.Column="2"/>
+                            <DatePicker Text="{Binding Path=DoneBy}"/>
+                        </Grid>
+                        <Button Grid.Column="4" Content="Add To Do" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}">
+                            <Button.ToolTip>
+                                <ToolTip>
+                                    <StackPanel>
+                                        <TextBlock FontWeight="Bold">Add a To-Do To the list</TextBlock>
+                                        <TextBlock>Submits a to-do list to the grid.</TextBlock>
+                                    </StackPanel>
+                                </ToolTip>
+                            </Button.ToolTip>
+                        </Button>
+                    </Grid>
+                </Expander>
             </Grid>
         </Grid>
-        
-        <Expander MaxHeight="100" Header="Expand Add Task text boxes" DockPanel.Dock="Bottom">
-            <Grid MaxHeight="100">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="*" MinWidth="100"/>
-                </Grid.ColumnDefinitions>
-
-
-                <Grid Grid.Column="0" x:Name="Name">
-
-                    <TextBox Text="{Binding Path=Name}"/>
-                </Grid>
-                <Grid Grid.Column="1" x:Name="Desc">
-                    <TextBox Text="{Binding Path=Desc}"/>
-                </Grid>
-                <Grid Grid.Column="2" x:Name="DoneBy">
-                    <DatePicker Text="{Binding Path=DoneBy}"/>
-                </Grid>
-                <Button Grid.Column="4" Content="Add To Do" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}">
-                    <Button.ToolTip>
-                        <ToolTip>
-                            <StackPanel>
-                                <TextBlock FontWeight="Bold">Add a To-Do To the list</TextBlock>
-                                <TextBlock>Submits a to-do list to the grid.</TextBlock>
-                            </StackPanel>
-                        </ToolTip>
-                    </Button.ToolTip>
-                </Button>
-            </Grid>
-        </Expander>
     </DockPanel>
 </Window>
