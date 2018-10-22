@@ -78,12 +78,12 @@
             </Grid.RowDefinitions>
             
             <Grid Grid.Row="0">
-                <DataGrid ItemsSource="{Binding ToDoItem}" HorizontalAlignment="Center" VerticalAlignment="Top" Name="taskListDataGrid">
+                <DataGrid ItemsSource="{Binding ToDoItem}" HorizontalAlignment="Center" VerticalAlignment="Top" AutoGenerateColumns="False" Name="taskListDataGrid">
                     <DataGrid.Columns>
+                        <DataGridTextColumn Width="*" Header="Check Done" Binding="{Binding IsDone, ValidatesOnDataErrors=True}"/>
                         <DataGridTextColumn Width="*" Header="Task Name" Binding="{Binding Name, ValidatesOnDataErrors=True}" />
                         <DataGridTextColumn Width="*" Header="Description" Binding ="{Binding Desc, ValidatesOnDataErrors=True}" />
                         <DataGridTextColumn Width="*" Header="Time done by" Binding="{Binding DoneBy, ValidatesOnDataErrors=True}"/>
-                        <DataGridTextColumn Width="*" Header="Check Done" Binding="{Binding IsDone, ValidatesOnDataErrors=True}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
@@ -92,6 +92,7 @@
                 <Expander DockPanel.Dock="Bottom" ExpandDirection="Up" MaxHeight="100" Header="Expand Add Task text boxes" >
                     <Grid MaxHeight="100">
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
                             <ColumnDefinition Width="4*"/>
                             <ColumnDefinition Width="4*"/>
                             <ColumnDefinition Width="4*"/>
@@ -109,6 +110,9 @@
                         <Grid Grid.Column="2" x:Name="DoneBy">
                             <TextBlock HorizontalAlignment="Center" Text="Date and Time" Grid.Column="2"/>
                             <DatePicker Text="{Binding Path=DoneBy}"/>
+                        </Grid>
+                        <Grid Grid.Column="3" x:Name="IsDone">
+                            <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Grid>
                         <Button Grid.Column="4" Content="Add To Do" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}">
                             <Button.ToolTip>

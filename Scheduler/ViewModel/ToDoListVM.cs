@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using Xceed.Wpf.Toolkit;
@@ -17,16 +18,16 @@ namespace Scheduler.ViewModel
 {
     public class ToDoListVM : INotifyPropertyChanged
     {
-        private ObservableCollection<ToDoListVM> todo = new ObservableCollection<ToDoListVM>();
+        private ObservableCollection<ToDo> todo = new ObservableCollection<ToDo>();
 
-        public ObservableCollection<ToDoListVM> ToDoItem {
+        public ObservableCollection<ToDo> ToDoItem {
             get { return todo; } 
             set
             {
                 if (todo != value)
                 {
                     todo = value;
-                    NotifyPropertyChanged(nameof(ToDoItem));
+                    NotifyPropertyChanged(nameof(todo));
                 }
             }
         }

@@ -17,8 +17,9 @@ namespace Scheduler.Model
         {
             Name = "";
             Desc = "";
-            DoneBy = new DateTime();
-            IsDone = false;        }
+            DoneBy = DateTime.Today;
+            IsDone = false;
+        }
 
         public ToDo(String Name, String Desc, DateTime DoneBy, Boolean IsDone)
         {
