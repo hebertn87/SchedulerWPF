@@ -16,9 +16,58 @@
     <Window.Resources>
         <vm:DateToStringConverter x:Key="DateToStringConverter"/>
     </Window.Resources>
+    <DockPanel>
+        <Ribbon DockPanel.Dock="Top" Margin="0,-22,0,0">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu>
 
-    
-    <Grid>
+                    <RibbonApplicationMenu.AuxiliaryPaneContent>
+                        <RibbonGallery ScrollViewer.VerticalScrollBarVisibility="Auto">
+                            <RibbonGalleryCategory MaxColumnCount="1">
+                                <RibbonGalleryItem x:Name="GalleryItem1" Content="Application menu content" 
+                                MouseOverBackground="Transparent"
+                                MouseOverBorderBrush="Transparent"
+                                CheckedBackground="Transparent"
+                                CheckedBorderBrush="Transparent"
+                                               />
+                                <RibbonGalleryItem>
+                                    <Hyperlink>
+                                        <Run Text="http://www.github.com/hebertn87"/>
+                                    </Hyperlink>
+                                </RibbonGalleryItem>
+                            </RibbonGalleryCategory>
+                        </RibbonGallery>
+                    </RibbonApplicationMenu.AuxiliaryPaneContent>
+                    <RibbonApplicationMenuItem x:Name="menuItem1" Header="Add"/>
+                    <RibbonApplicationMenuItem x:Name="menuItem2" Header="Settings"/>
+
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+
+            <RibbonTab x:Name="rbnTab1" Header="Tab1">
+                <RibbonGroup x:Name="rbnGr1" Header="General">
+                    <RibbonButton x:Name="btnRibbon1" Label="Save" />
+                    <RibbonButton x:Name="btnRibbon2" Label="Open" />
+                </RibbonGroup>
+                <RibbonGroup x:Name="rbnGr2" Header="New group">
+                    <RibbonButton x:Name="btnRibbon3" Label="Font" />
+                    <RibbonButton x:Name="btnRibbon4" Label="Delete" />
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab x:Name="rbnTab2" Header="Tab2">
+                <RibbonGroup x:Name="rbnGr3" Header="Other Group">
+                    <RibbonButton x:Name="btnRibbon5" Label="Play" />
+                    <RibbonButton x:Name="btnRibbon6" Label="List" />
+                </RibbonGroup>
+                <RibbonGroup x:Name="rbnGr4" Header="What a group">
+                    <RibbonButton x:Name="btnRibbon7" Label="Sleep" />
+                    <RibbonButton x:Name="btnRibbon8" Label="Add" />
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <Grid>
+
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -26,74 +75,74 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition x:Name="col1" Width="*"/>
-                <ColumnDefinition x:Name="col2" Width="5*"/>
-                <ColumnDefinition x:Name="col3" Width="2*"/>
-                <ColumnDefinition x:Name="col4" Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="Task Name"/>
-            <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="Description"/>
-            <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="Date and Time"/>
-            <TextBlock HorizontalAlignment="Center" Grid.Column="3" Text="Done"/>
-
-            <ItemsControl ItemsSource="{Binding ToDoItem}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <VirtualizingStackPanel Orientation="Horizontal"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="{Binding Path=Name, ValidatesOnDataErrors=True}"/>
-                            <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="{Binding Path=Desc, ValidatesOnDataErrors=True}"/>
-                            <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="{Binding Path=DoneBy, ValidatesOnDataErrors=True, Converter={StaticResource DateToStringConverter}, StringFormat={}{dd:t}}"/>
-                            <CheckBox HorizontalAlignment="Center" Grid.Column="3" IsChecked="{Binding Path=IsDone, ValidatesOnDataErrors=True}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-
-            </ItemsControl>
-        </Grid>
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="*" MinWidth="100"/>
-            </Grid.ColumnDefinitions>
-
-            <TextBlock HorizontalAlignment="Center" Text="Name" Grid.Column="0"/>
-            <TextBlock HorizontalAlignment="Center" Text="Description" Grid.Column="1"/>
-            <TextBlock HorizontalAlignment="Center" Text="Date and Time" Grid.Column="2"/>
-
-        </Grid>
-            
-        <Grid Grid.Row="3">
+            <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="*" MinWidth="100"/>
+                    <ColumnDefinition x:Name="col1" Width="*"/>
+                    <ColumnDefinition x:Name="col2" Width="5*"/>
+                    <ColumnDefinition x:Name="col3" Width="2*"/>
+                    <ColumnDefinition x:Name="col4" Width="*"/>
                 </Grid.ColumnDefinitions>
 
-            
-            <Grid Grid.Column="0" x:Name="Name">
-                
-                <TextBox Text="{Binding Path=Name}"/>
+                <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="Task Name"/>
+                <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="Description"/>
+                <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="Date and Time"/>
+                <TextBlock HorizontalAlignment="Center" Grid.Column="3" Text="Done"/>
+
+                <ItemsControl ItemsSource="{Binding ToDoItem}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="{Binding Path=Name, ValidatesOnDataErrors=True}"/>
+                                <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="{Binding Path=Desc, ValidatesOnDataErrors=True}"/>
+                                <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="{Binding Path=DoneBy, ValidatesOnDataErrors=True, Converter={StaticResource DateToStringConverter}, StringFormat={}{dd:t}}"/>
+                                <CheckBox HorizontalAlignment="Center" Grid.Column="3" IsChecked="{Binding Path=IsDone, ValidatesOnDataErrors=True}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+
+                </ItemsControl>
             </Grid>
-            <Grid Grid.Column="1" x:Name="Desc">
-                <TextBox Text="{Binding Path=Desc}"/>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*" MinWidth="100"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock HorizontalAlignment="Center" Text="Name" Grid.Column="0"/>
+                <TextBlock HorizontalAlignment="Center" Text="Description" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Center" Text="Date and Time" Grid.Column="2"/>
+
             </Grid>
-            <Grid Grid.Column="2" x:Name="DoneBy">
-                <TextBox Text="{Binding Path=DoneBy}"/>
-            </Grid>
-            <Button Grid.Column="4" Content="Add To Do" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}"/>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*" MinWidth="100"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Grid Grid.Column="0" x:Name="Name">
+
+                    <TextBox Text="{Binding Path=Name}"/>
+                </Grid>
+                <Grid Grid.Column="1" x:Name="Desc">
+                    <TextBox Text="{Binding Path=Desc}"/>
+                </Grid>
+                <Grid Grid.Column="2" x:Name="DoneBy">
+                    <TextBox Text="{Binding Path=DoneBy}"/>
+                </Grid>
+                <Button Grid.Column="4" Content="Add To Do" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}"/>
             </Grid>
         </Grid>
-    
+    </DockPanel>
 </Window>
