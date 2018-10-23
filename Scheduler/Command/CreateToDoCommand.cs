@@ -9,11 +9,12 @@ using Scheduler.ViewModel;
 
 namespace Scheduler.Command
 {
-    class CreateToDoCommand : ICommand
+    public class CreateToDoCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
         private ToDo todo = new ToDo();
+
         public bool CanExecute(object parameter)
         {
             return true;
@@ -23,7 +24,7 @@ namespace Scheduler.Command
         {
             if (parameter is ToDoListVM toDoList)
             {
-                toDoList.ToDoItem.Add(new ToDo() {Name = toDoList.Name, Desc = toDoList.Desc, DoneBy = toDoList.DoneBy, IsDone= false });
+                toDoList.ToDoItem.Add(new ToDoListVM() {Name = toDoList.Name, Desc = toDoList.Desc, DoneBy = toDoList.DoneBy});
             }
         }
     }

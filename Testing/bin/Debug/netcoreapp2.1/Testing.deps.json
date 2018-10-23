@@ -10,6 +10,7 @@
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "15.8.0",
           "NUnit": "3.11.0",
+          "Scheduler": "1.0.0",
           "xunit": "2.3.1",
           "xunit.runner.visualstudio": "2.3.1"
         },
@@ -1061,6 +1062,40 @@
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "15.8.0"
         }
+      },
+      "Scheduler/1.0.0": {
+        "dependencies": {
+          "GalaSoft.MvvmLight.Platform": "5.3.0.19032",
+          "System.Windows.Interactivity": "4.5.0.0",
+          "GalaSoft.MvvmLight": "5.3.0.19026"
+        },
+        "runtime": {
+          "Scheduler.exe": {}
+        }
+      },
+      "GalaSoft.MvvmLight.Platform.Reference/5.3.0.19032": {
+        "runtime": {
+          "GalaSoft.MvvmLight.Platform.dll": {
+            "assemblyVersion": "5.3.0.19032",
+            "fileVersion": "5.3.0.19032"
+          }
+        }
+      },
+      "System.Windows.Interactivity.Reference/4.5.0.0": {
+        "runtime": {
+          "System.Windows.Interactivity.dll": {
+            "assemblyVersion": "4.5.0.0",
+            "fileVersion": "3.0.40218.0"
+          }
+        }
+      },
+      "GalaSoft.MvvmLight.Reference/5.3.0.19026": {
+        "runtime": {
+          "GalaSoft.MvvmLight.dll": {
+            "assemblyVersion": "5.3.0.19026",
+            "fileVersion": "5.3.0.19026"
+          }
+        }
       }
     }
   },
@@ -1608,6 +1643,26 @@
       "sha512": "sha512-tblA8hxXBcyHMAaCjwD+bQmb4EuNoK37FB1iv4FVks5BinZQY24Sp44VrGjPqjbS9Zk+T2MHqK+QtFjyHkSJFQ==",
       "path": "xunit.runner.visualstudio/2.3.1",
       "hashPath": "xunit.runner.visualstudio.2.3.1.nupkg.sha512"
+    },
+    "Scheduler/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GalaSoft.MvvmLight.Platform.Reference/5.3.0.19032": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Windows.Interactivity.Reference/4.5.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GalaSoft.MvvmLight.Reference/5.3.0.19026": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

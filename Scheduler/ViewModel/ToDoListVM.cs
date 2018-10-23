@@ -4,13 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
 using Xceed.Wpf.Toolkit;
 
@@ -18,9 +11,9 @@ namespace Scheduler.ViewModel
 {
     public class ToDoListVM : INotifyPropertyChanged
     {
-        private ObservableCollection<ToDo> todo = new ObservableCollection<ToDo>();
+        private ObservableCollection<ToDoListVM> todo = new ObservableCollection<ToDoListVM>();
 
-        public ObservableCollection<ToDo> ToDoItem {
+        public ObservableCollection<ToDoListVM> ToDoItem {
             get { return todo; } 
             set
             {
@@ -34,10 +27,11 @@ namespace Scheduler.ViewModel
 
         public ICommand CreateToDoCommand { get { return new CreateToDoCommand(); } }
 
-        public DateTime DoneBy { get; set; }
-        public string Desc { get; set; }
-        public string Name { get; set; }
-        public bool IsDone { get; set; }
+        public String DoneBy { get; set; }
+        public String Desc { get; set; }
+        public String Name { get; set; }
+        public Boolean IsDone { get; set; }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

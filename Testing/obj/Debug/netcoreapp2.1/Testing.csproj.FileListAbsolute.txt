@@ -12,3 +12,14 @@ C:\Users\heber\source\repos\Scheduler\Testing\obj\Debug\netcoreapp2.1\Testing.As
 C:\Users\heber\source\repos\Scheduler\Testing\obj\Debug\netcoreapp2.1\Testing.AssemblyInfo.cs
 C:\Users\heber\source\repos\Scheduler\Testing\obj\Debug\netcoreapp2.1\Testing.dll
 C:\Users\heber\source\repos\Scheduler\Testing\obj\Debug\netcoreapp2.1\Testing.pdb
+C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\Scheduler.exe
+C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\GalaSoft.MvvmLight.Platform.dll
+C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\System.Windows.Interactivity.dll
+C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\GalaSoft.MvvmLight.dll
+C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\Scheduler.pdb
+C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\Scheduler.exe.config
+C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\GalaSoft.MvvmLight.Platform.xml
+C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\GalaSoft.MvvmLight.pdb
+C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\GalaSoft.MvvmLight.xml
+C:\Users\heber\source\repos\Scheduler\Testing\obj\Debug\netcoreapp2.1\Testing.csproj.CopyComplete

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.galasoft.ch/ignore"
+        xmlns:MyNamespace="clr-namespace:Scheduler.Resources"
         xmlns:vm="clr-namespace:Scheduler.ViewModel"
         xmlns:c="clr-namespace:Scheduler"
         mc:Ignorable="d ignore"
@@ -11,6 +12,15 @@
         Width="600"
         Title="Task List"
         DataContext="{Binding Main, Source={StaticResource ToDoListVM}}">
+   
+    <Window.Resources>
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries >
+                <ResourceDictionary Source="/Themes/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
 
     <DockPanel>
         <Ribbon DockPanel.Dock="Top" Margin="0,-22,0,0">
@@ -23,8 +33,7 @@
                                 MouseOverBackground="Transparent"
                                 MouseOverBorderBrush="Transparent"
                                 CheckedBackground="Transparent"
-                                CheckedBorderBrush="Transparent"
-                                               />
+                                CheckedBorderBrush="Transparent"/>
                                 <RibbonGalleryItem>
                                     <Hyperlink>
                                         <Run Text="http://www.github.com/hebertn87"/>
@@ -35,11 +44,11 @@
                     </RibbonApplicationMenu.AuxiliaryPaneContent>
                     <RibbonApplicationMenuItem x:Name="menuItem1" Header="Add"/>
                     <RibbonApplicationMenuItem x:Name="menuItem2" Header="Settings"/>
-
+                    <MyNamespace:Styles/>
                 </RibbonApplicationMenu>
             </Ribbon.ApplicationMenu>
 
-            <RibbonTab x:Name="rbnTab1" Header="Tab1">
+            <RibbonTab x:Name="rbnTab1" Header="Home">
                 <RibbonGroup x:Name="rbnGr1" Header="General">
                     <RibbonButton x:Name="btnRibbon1" Label="Save" />
                     <RibbonButton x:Name="btnRibbon2" Label="Open" />
@@ -49,7 +58,7 @@
                     <RibbonButton x:Name="btnRibbon4" Label="Delete" />
                 </RibbonGroup>
             </RibbonTab>
-            <RibbonTab x:Name="rbnTab2" Header="Tab2">
+            <RibbonTab x:Name="rbnTab2" Header="">
                 <RibbonGroup x:Name="rbnGr3" Header="Other Group">
                     <RibbonButton x:Name="btnRibbon5" Label="Play" />
                     <RibbonButton x:Name="btnRibbon6" Label="List" />
@@ -80,51 +89,50 @@
             <Grid Grid.Row="0">
                 <DataGrid ItemsSource="{Binding ToDoItem}" HorizontalAlignment="Center" VerticalAlignment="Top" AutoGenerateColumns="False" Name="taskListDataGrid">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Width="*" Header="Check Done" Binding="{Binding IsDone, ValidatesOnDataErrors=True}"/>
-                        <DataGridTextColumn Width="*" Header="Task Name" Binding="{Binding Name, ValidatesOnDataErrors=True}" />
-                        <DataGridTextColumn Width="*" Header="Description" Binding ="{Binding Desc, ValidatesOnDataErrors=True}" />
-                        <DataGridTextColumn Width="*" Header="Time done by" Binding="{Binding DoneBy, ValidatesOnDataErrors=True}"/>
+                        <DataGridCheckBoxColumn Header="Check Done" Binding="{Binding IsDone, ValidatesOnDataErrors=True}"/>
+                        <DataGridTextColumn Header="Task Name" Binding="{Binding Name, ValidatesOnDataErrors=True}" />
+                        <DataGridTextColumn Header="Description" Binding ="{Binding Desc, ValidatesOnDataErrors=True}" />
+                        <DataGridTextColumn Header="Time done by" Binding="{Binding DoneBy, ValidatesOnDataErrors=True}"/>
                     </DataGrid.Columns>
                 </DataGrid>
+               
             </Grid>
 
             <Grid Grid.Row="1">
                 <Expander DockPanel.Dock="Bottom" ExpandDirection="Up" MaxHeight="100" Header="Expand Add Task text boxes" >
-                    <Grid MaxHeight="100">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="4*"/>
-                            <ColumnDefinition Width="4*"/>
-                            <ColumnDefinition Width="4*"/>
-                            <ColumnDefinition Width="4*"/>
-                            <ColumnDefinition Width="*" MinWidth="100"/>
-                        </Grid.ColumnDefinitions>
+                    <GroupBox>
+                        <Grid MaxHeight="100">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="*" MinWidth="100"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Grid Grid.Column="0" x:Name="Name">
-                            <TextBlock HorizontalAlignment="Center" Text="Name" Grid.Column="0"/>
-                            <TextBox Text="{Binding Path=Name}"/>
+                            <Grid Grid.Column="0" x:Name="Name">
+                                <TextBlock Text="Name" Grid.Column="0"/>
+                                <TextBox Text="{Binding Path=Name}"/>
+                            </Grid>
+                                <Grid Grid.Column="1" x:Name="Desc">
+                                    <TextBlock Text="Description" Grid.Column="1"/>
+                                    <TextBox Text="{Binding Path=Desc}"/>
+                                </Grid>
+                                <Grid Grid.Column="2" x:Name="DoneBy">
+                                    <TextBlock  Text="Date and Time" Grid.Column="2"/>
+                                    <TextBox Text="{Binding Path=DoneBy}"/>
+                                </Grid>
+                            <Button Name="addbutton" Grid.Column="3" Content="Add To Do" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}">
+                                <Button.ToolTip>
+                                    <ToolTip>
+                                        <StackPanel>
+                                            <TextBlock FontWeight="Bold">Add a To-Do To the list</TextBlock>
+                                            <TextBlock>Submits a to-do list to the grid.</TextBlock>
+                                        </StackPanel>
+                                    </ToolTip>
+                                </Button.ToolTip>
+                            </Button>
                         </Grid>
-                        <Grid Grid.Column="1" x:Name="Desc">
-                            <TextBlock HorizontalAlignment="Center" Text="Description" Grid.Column="1"/>
-                            <TextBox Text="{Binding Path=Desc}"/>
-                        </Grid>
-                        <Grid Grid.Column="2" x:Name="DoneBy">
-                            <TextBlock HorizontalAlignment="Center" Text="Date and Time" Grid.Column="2"/>
-                            <DatePicker Text="{Binding Path=DoneBy}"/>
-                        </Grid>
-                        <Grid Grid.Column="3" x:Name="IsDone">
-                            <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        </Grid>
-                        <Button Grid.Column="4" Content="Add To Do" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}">
-                            <Button.ToolTip>
-                                <ToolTip>
-                                    <StackPanel>
-                                        <TextBlock FontWeight="Bold">Add a To-Do To the list</TextBlock>
-                                        <TextBlock>Submits a to-do list to the grid.</TextBlock>
-                                    </StackPanel>
-                                </ToolTip>
-                            </Button.ToolTip>
-                        </Button>
-                    </Grid>
+                    </GroupBox>
                 </Expander>
             </Grid>
         </Grid>

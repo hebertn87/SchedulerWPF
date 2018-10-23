@@ -10,23 +10,20 @@ namespace Scheduler.Model
     {
         public String Name { get; set; }
         public String Desc { get; set; }
-        public DateTime DoneBy { get; set; }
-        public Boolean IsDone { get; set; }
+        public String DoneBy { get; set; }
 
         public ToDo()
         {
             Name = "";
             Desc = "";
-            DoneBy = DateTime.Today;
-            IsDone = false;
+            DoneBy = "";
         }
 
-        public ToDo(String Name, String Desc, DateTime DoneBy, Boolean IsDone)
+        public ToDo(String Name, String Desc, String DoneBy)
         {
             this.Name = Name;
             this.Desc = Desc;
             this.DoneBy = DoneBy;
-            this.IsDone = IsDone;
         }
 
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
