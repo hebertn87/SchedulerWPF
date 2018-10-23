@@ -42,7 +42,6 @@
                             </RibbonGalleryCategory>
                         </RibbonGallery>
                     </RibbonApplicationMenu.AuxiliaryPaneContent>
-                    <RibbonApplicationMenuItem x:Name="menuItem1" Header="Add"/>
                     <RibbonApplicationMenuItem x:Name="menuItem2" Header="Settings"/>
                     <MyNamespace:Styles/>
                 </RibbonApplicationMenu>
@@ -50,35 +49,94 @@
 
             <RibbonTab x:Name="rbnTab1" Header="Home">
                 <RibbonGroup x:Name="rbnGr1" Header="General">
-                    <RibbonButton x:Name="btnRibbon1" Label="Save" />
-                    <RibbonButton x:Name="btnRibbon2" Label="Open" />
+                    <RibbonButton x:Name="btnRibbon1" Label="Save" Command="Save"/>
+                    <RibbonButton x:Name="btnRibbon2" Label="Open" Command="Open" />
                 </RibbonGroup>
                 <RibbonGroup x:Name="rbnGr2" Header="New group">
-                    <RibbonButton x:Name="btnRibbon3" Label="Font" />
-                    <RibbonButton x:Name="btnRibbon4" Label="Delete" />
-                </RibbonGroup>
-            </RibbonTab>
-            <RibbonTab x:Name="rbnTab2" Header="">
-                <RibbonGroup x:Name="rbnGr3" Header="Other Group">
-                    <RibbonButton x:Name="btnRibbon5" Label="Play" />
-                    <RibbonButton x:Name="btnRibbon6" Label="List" />
-                </RibbonGroup>
-                <RibbonGroup x:Name="rbnGr4" Header="What a group">
-                    <RibbonButton x:Name="btnRibbon7" Label="Sleep" />
-                    <RibbonButton x:Name="btnRibbon8" Label="Add" />
+                    <RibbonButton x:Name="btnRibbon3" Label="Cut" />
+                    <RibbonButton x:Name="btnRibbon4" Label="Copy" />
+                    <RibbonButton x:Name="btnRibbon5" Label="Paste" />
                 </RibbonGroup>
             </RibbonTab>
         </Ribbon>
 
         <TreeView DockPanel.Dock="Left">
-            <TreeViewItem Header="Group 1">
-                <TreeViewItem Header="Item 1"/>
-                <TreeViewItem Header="Item 2"/>
-                <TreeViewItem Header="Item 3"/>
-                <TreeViewItem Header="Item 4"/>
-                <TreeViewItem Header="Item 5"/>
+            <TreeViewItem IsExpanded="True">
+                <TreeViewItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Category 1" />
+                    </StackPanel>
+                </TreeViewItem.Header>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Task 1" Foreground="Blue" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+                <TreeViewItem IsExpanded="True">
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                           
+                            <TextBlock Text="Task 2" Foreground="Blue" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                    <TreeViewItem>
+                        <TreeViewItem.Header>
+                            <TextBlock Text="Task 2.1" Foreground="Green" />
+                        </TreeViewItem.Header>
+                    </TreeViewItem>
+                    <TreeViewItem>
+                        <TreeViewItem.Header>
+                            <TextBlock Text="Task 2.2" Foreground="Green" />
+                        </TreeViewItem.Header>
+                    </TreeViewItem>
+                </TreeViewItem>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <TextBlock Text="Task 3" Foreground="Blue" />
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem IsExpanded="True">
+                <TreeViewItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Category 2" />
+                    </StackPanel>
+                </TreeViewItem.Header>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Task 1" Foreground="Blue" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+                <TreeViewItem IsExpanded="True">
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+
+                            <TextBlock Text="Task 2" Foreground="Blue" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                    <TreeViewItem>
+                        <TreeViewItem.Header>
+                            <TextBlock Text="Task 2.1" Foreground="Green" />
+                        </TreeViewItem.Header>
+                    </TreeViewItem>
+                    <TreeViewItem>
+                        <TreeViewItem.Header>
+                            <TextBlock Text="Task 2.2" Foreground="Green" />
+                        </TreeViewItem.Header>
+                    </TreeViewItem>
+                </TreeViewItem>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <TextBlock Text="Task 3" Foreground="Blue" />
+                    </TreeViewItem.Header>
+                </TreeViewItem>
             </TreeViewItem>
         </TreeView>
+        
 
         <Grid DockPanel.Dock="Top">
             <Grid.RowDefinitions>
