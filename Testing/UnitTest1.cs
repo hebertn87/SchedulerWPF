@@ -74,13 +74,22 @@ namespace Testing
         [Fact]
         public void Test8()
         {
-            
+            //checking for edge cases on string
+            todolist.Name = "this!!@!ASDFAS*T*$#%@$(@#)@#$)%";
+            todo.Add(todolist);
+
+            Assert.Equal("this!!@!ASDFAS*T*$#%@$(@#)@#$)%", todolist.Name);
+
         }
 
         [Fact]
         public void Test9()
         {
+            //checking for edge cases on string
+            todolist.Desc = "this!!@!ASDFAS*T*$#%@$(@#)@#$)%";
+            todo.Add(todolist);
 
+            Assert.Equal("this!!@!ASDFAS*T*$#%@$(@#)@#$)%", todolist.Desc);
 
 
         }
@@ -88,9 +97,9 @@ namespace Testing
         [Fact]
         public void Test10()
         {
+            todolist.IsDone = false;
 
-
-
+            Assert.DoesNotMatch(todolist.IsDone.ToString(), "sdkflaj;");
         }
 
     }
