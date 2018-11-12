@@ -16,10 +16,5 @@ namespace Scheduler.Ooui
         {
             InitializeComponent();
         }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
