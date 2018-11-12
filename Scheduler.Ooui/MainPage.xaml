@@ -27,7 +27,7 @@
                     <Label Text="{Binding Path=Desc}"/>
                 </Grid>
                 <Grid Grid.Column="2" x:Name="DoneBy">
-                    <Label  Text="Date and Time" Grid.Column="2"/>
+                    <Label Text="Date and Time" Grid.Column="2"/>
                     <Label Text="{Binding Path=DoneBy}"/>
                 </Grid>
                 <Button Text="Create new Task" Command="{Binding CreateToDoCommand}" CommandParameter="{Binding}"/>

@@ -11,6 +11,8 @@ namespace Testing
     {
         ToDoListVM todolist = new ToDoListVM();
         ObservableCollection<ToDoListVM> todo = new ObservableCollection<ToDoListVM>();
+
+
         
 
         [Fact]
