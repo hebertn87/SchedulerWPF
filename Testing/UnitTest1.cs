@@ -1,10 +1,9 @@
 using System;
 using Xunit;
-using Scheduler.ViewModel;
+using Scheduler.Shared.ViewModel;
 using System.Windows.Input;
-using Scheduler.Model;
+using Scheduler.Shared;
 using System.Collections.ObjectModel;
-using Scheduler.Command;
 
 namespace Testing
 {

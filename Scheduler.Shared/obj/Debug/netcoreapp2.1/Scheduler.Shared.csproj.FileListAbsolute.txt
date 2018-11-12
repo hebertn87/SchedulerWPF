@@ -1,0 +1,4 @@
+C:\Users\heber\source\repos\Scheduler\Scheduler.Shared\obj\Debug\netcoreapp2.1\Scheduler.Shared.csprojAssemblyReference.cache
+C:\Users\heber\source\repos\Scheduler\Scheduler.Shared\obj\Debug\netcoreapp2.1\Scheduler.Shared.csproj.CoreCompileInputs.cache
+C:\Users\heber\source\repos\Scheduler\Scheduler.Shared\obj\Debug\netcoreapp2.1\Scheduler.Shared.AssemblyInfoInputs.cache
+C:\Users\heber\source\repos\Scheduler\Scheduler.Shared\obj\Debug\netcoreapp2.1\Scheduler.Shared.AssemblyInfo.cs

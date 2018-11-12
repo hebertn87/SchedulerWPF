@@ -136,3 +136,4 @@ C:\Users\nathan.hebert\Source\Repos\SchedulerWPF2\Scheduler\obj\Debug\Scheduler.
 C:\Users\nathan.hebert\Source\Repos\SchedulerWPF2\Scheduler\obj\Debug\Scheduler.exe
 C:\Users\nathan.hebert\Source\Repos\SchedulerWPF2\Scheduler\obj\Debug\Scheduler.pdb
 C:\Users\heber\source\repos\Scheduler\Scheduler\obj\Debug\Themes\Styles.baml
+C:\Users\heber\source\repos\Scheduler\Scheduler\obj\Debug\Scheduler.exe.config

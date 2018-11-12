@@ -1,0 +1,9 @@
+C:\Users\heber\source\repos\Scheduler\Sheduler.Shared\bin\Debug\netstandard2.0\Scheduler.Shared.deps.json
+C:\Users\heber\source\repos\Scheduler\Sheduler.Shared\bin\Debug\netstandard2.0\Scheduler.Shared.dll
+C:\Users\heber\source\repos\Scheduler\Sheduler.Shared\bin\Debug\netstandard2.0\Scheduler.Shared.pdb
+C:\Users\heber\source\repos\Scheduler\Sheduler.Shared\obj\Debug\netstandard2.0\Scheduler.Shared.csprojAssemblyReference.cache
+C:\Users\heber\source\repos\Scheduler\Sheduler.Shared\obj\Debug\netstandard2.0\Scheduler.Shared.csproj.CoreCompileInputs.cache
+C:\Users\heber\source\repos\Scheduler\Sheduler.Shared\obj\Debug\netstandard2.0\Scheduler.Shared.AssemblyInfoInputs.cache
+C:\Users\heber\source\repos\Scheduler\Sheduler.Shared\obj\Debug\netstandard2.0\Scheduler.Shared.AssemblyInfo.cs
+C:\Users\heber\source\repos\Scheduler\Sheduler.Shared\obj\Debug\netstandard2.0\Scheduler.Shared.dll
+C:\Users\heber\source\repos\Scheduler\Sheduler.Shared\obj\Debug\netstandard2.0\Scheduler.Shared.pdb

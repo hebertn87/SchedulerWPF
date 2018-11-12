@@ -1,0 +1,15 @@
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\bin\Debug\netcoreapp2.1\Scheduler.Ooui.deps.json
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\bin\Debug\netcoreapp2.1\Scheduler.Ooui.runtimeconfig.json
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\bin\Debug\netcoreapp2.1\Scheduler.Ooui.runtimeconfig.dev.json
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\bin\Debug\netcoreapp2.1\Scheduler.Ooui.dll
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\obj\Debug\netcoreapp2.1\Scheduler.Ooui.csproj.CoreCompileInputs.cache
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\obj\Debug\netcoreapp2.1\Scheduler.Ooui.AssemblyInfoInputs.cache
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\obj\Debug\netcoreapp2.1\Scheduler.Ooui.AssemblyInfo.cs
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\obj\Debug\netcoreapp2.1\Scheduler.Ooui.csprojAssemblyReference.cache
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\obj\Debug\netcoreapp2.1\Scheduler.Ooui.MainPage.xaml.g.cs
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\bin\Debug\netcoreapp2.1\Scheduler.Shared.dll
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\bin\Debug\netcoreapp2.1\Scheduler.Shared.pdb
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\obj\Debug\netcoreapp2.1\Scheduler.Ooui.csproj.CopyComplete
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\bin\Debug\netcoreapp2.1\Scheduler.Ooui.pdb
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\obj\Debug\netcoreapp2.1\Scheduler.Ooui.dll
+C:\Users\heber\source\repos\Scheduler\Scheduler.Ooui\obj\Debug\netcoreapp2.1\Scheduler.Ooui.pdb

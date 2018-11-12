@@ -23,3 +23,5 @@ C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\GalaSoft.M
 C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\GalaSoft.MvvmLight.pdb
 C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\GalaSoft.MvvmLight.xml
 C:\Users\heber\source\repos\Scheduler\Testing\obj\Debug\netcoreapp2.1\Testing.csproj.CopyComplete
+C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\Scheduler.Shared.dll
+C:\Users\heber\source\repos\Scheduler\Testing\bin\Debug\netcoreapp2.1\Scheduler.Shared.pdb

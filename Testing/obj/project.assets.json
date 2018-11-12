@@ -1699,11 +1699,24 @@
       },
       "Scheduler/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "Scheduler.Shared": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Scheduler.dll": {}
         },
         "runtime": {
           "bin/placeholder/Scheduler.dll": {}
+        }
+      },
+      "Scheduler.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Scheduler.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Scheduler.Shared.dll": {}
         }
       }
     }
@@ -5799,6 +5812,11 @@
       "type": "project",
       "path": "../Scheduler/Scheduler.csproj",
       "msbuildProject": "../Scheduler/Scheduler.csproj"
+    },
+    "Scheduler.Shared/1.0.0": {
+      "type": "project",
+      "path": "../Sheduler.Shared/Scheduler.Shared.csproj",
+      "msbuildProject": "../Sheduler.Shared/Scheduler.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {

@@ -1065,12 +1065,18 @@
       },
       "Scheduler/1.0.0": {
         "dependencies": {
+          "Scheduler.Shared": "1.0.0",
           "GalaSoft.MvvmLight.Platform": "5.3.0.19032",
           "System.Windows.Interactivity": "4.5.0.0",
           "GalaSoft.MvvmLight": "5.3.0.19026"
         },
         "runtime": {
           "Scheduler.exe": {}
+        }
+      },
+      "Scheduler.Shared/1.0.0": {
+        "runtime": {
+          "Scheduler.Shared.dll": {}
         }
       },
       "GalaSoft.MvvmLight.Platform.Reference/5.3.0.19032": {
@@ -1645,6 +1651,11 @@
       "hashPath": "xunit.runner.visualstudio.2.3.1.nupkg.sha512"
     },
     "Scheduler/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Scheduler.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
