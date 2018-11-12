@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.galasoft.ch/ignore"
         xmlns:MyNamespace="clr-namespace:Scheduler.Resources"
-        xmlns:vm="clr-namespace:Scheduler.ViewModel"
+        xmlns:vm="clr-namespace:Scheduler.Shared.ViewModel"
         xmlns:c="clr-namespace:Scheduler"
         mc:Ignorable="d ignore"
         Height="600"

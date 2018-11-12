@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using Scheduler.ViewModel;
+using Scheduler.Shared.ViewModel;
 
 namespace Scheduler
 {
